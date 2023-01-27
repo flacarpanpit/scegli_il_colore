@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scelta esistenziale</title>
+<style type="text/css">
+body {
+    background-color: red;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+h1{
+    text-align: center;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+h2{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+#colori {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#colori button {
+    width: 50px;
+    height: 50px;
+
+    margin: 5px;
+}
+
+#colori button:active {
+    border-radius: 15px;
+}
+</style>
+</head>
+<body>
+<div>
+    <h1>Scegli il colore</h1>
+    <h2>Scegli un colore per cambiare lo sfondo</h2>
+    <section id="colori">
+        <button color="red" style="background-color:red;"></button>
+        <button color="orange" style="background-color:orange;"></button>
+        <button color="blueviolet" style="background-color:blueviolet;"></button>
+        <button color="aquamarine" style="background-color:aquamarine;"></button>
+        <button color="skyblue" style="background-color:skyblue;"></button>
+        <button color="limegreen" style="background-color:limegreen;"></button>
+        <button color="black" style="background-color:black;"> </button>
+    </section>
+</div>
+<script type="text/javascript">
+const buttons = document.querySelectorAll('#colori button');
+buttons.forEach(button => {
+    button.addEventListener('click', event => {
+        const color = event.target.getAttribute('color');
+        buttons.forEach(b => b.style.borderColor = "white")
+        event.target.style.borderColor = "black";
+        event.target.style.borderRadius = "15px";
+        document.body.style.backgroundColor = color;
+    });
+});    
+</script>
+</body>
+</html>
